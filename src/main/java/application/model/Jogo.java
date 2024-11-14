@@ -3,6 +3,7 @@ package application.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import application.record.JogoDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,4 +32,10 @@ public class Jogo {
         joinColumns = @JoinColumn(name = "id_jogo"),
         inverseJoinColumns = @JoinColumn(name = "id_plataforma"))
     private Set<Plataforma> plataformas = new HashSet<Plataforma>();
+
+    public Jogo(JogoDTO jogo) {
+        this.id = jogo.id();
+        this.titulo = jogo.titulo();
+        this.plataformas = jogo.plataformas();
+    }
 }
