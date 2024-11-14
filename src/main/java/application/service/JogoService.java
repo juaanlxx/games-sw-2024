@@ -1,7 +1,11 @@
 package application.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import application.model.Jogo;
 import application.record.JogoDTO;
@@ -22,7 +26,14 @@ public class JogoService {
     }
 
     public JogoDTO getOnebyId(long id){
-        return new JogoDTO(jogoRepo.findById(id).get());
+        // return new JogoDTO(jogoRepo.findById(id).get());
+        Optional<Jogo> resultado = jogoRepo.findById(id);
+        if(resultado.isEmpty()) {
+            throw new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Jogo não encontrado"
+            );
+        }
+        return new JogoDTO(resultado.get());
     }
 
     public JogoDTO add(JogoDTO jogo) {

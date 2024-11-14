@@ -26,15 +26,15 @@ public class JogoController {
     public JogoDTO getOne(@PathVariable long id) {
         return jogoSrv.getOnebyId(id);
     }
-    
-    @GetMapping
-    // public Iterable<JogoDTO> list() {
-    //     return jogoSrv.getAll();
-    // }
 
+    @GetMapping
     public Iterable<JogoListDTO> list() {
         return jogoSrv.getAllOnlyTitulo();
     }
+        // public Iterable<JogoDTO> list() {
+    //     return jogoSrv.getAll();
+    // }
+
 
     @PostMapping
     public JogoDTO insert(@RequestBody JogoDTO jogo) {
