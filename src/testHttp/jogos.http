@@ -4,7 +4,7 @@ GET {{url}}/jogos
 
 ###
 
-GET {{url}}/jogos/1
+GET {{url}}/jogos/2
 
 
 ###
