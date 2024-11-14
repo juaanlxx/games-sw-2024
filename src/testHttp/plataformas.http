@@ -1,4 +1,4 @@
-@url = https://8080-marcoweb-gamessw22024-y00ijzshvwj.ws-us116.gitpod.io
+@url = https://8080-juaanlxx-gamessw2024-uu7vv8d60lv.ws-us116.gitpod.io
 
 GET {{url}}/plataformas
 
@@ -7,7 +7,7 @@ POST {{url}}/plataformas
 Content-Type: application/json
 
 {
-    "nome" : "XBox"
+    "nome" : "PlayStation 4"
 }
 
 ###
